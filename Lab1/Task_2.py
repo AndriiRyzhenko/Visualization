@@ -28,6 +28,7 @@ Y = np.arange(-4, 4, 0.3)
 X, Y = np.meshgrid(X, Y)
 U = calc_u(X, Y)
 
+np.savetxt('Task_2.txt', np.c_[X.ravel(), Y.ravel(), U.ravel()], header='X Y Z')
 
 surf = ax.plot_surface(X, Y, U, cmap=cm.coolwarm,
                        linewidth=0, antialiased=False)

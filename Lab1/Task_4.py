@@ -20,3 +20,9 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 plt.show()
+
+# об'єднати x, y, u в один масив
+combined = np.array([x.flatten(), y.flatten(), z.flatten()])
+
+# зберегти combined в txt формат
+np.savetxt('Task_4.txt', combined.T)

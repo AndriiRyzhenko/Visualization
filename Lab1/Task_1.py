@@ -12,7 +12,7 @@ def func_y(x):
     return (4 + x ** 2 * np.exp(-3 * x)) / (4 + np.sqrt(x**4 + np.sin(x) ** 2))
 
 
-x = np.arange(0, 1, 0.4)
+x = np.arange(0, 2, 0.01)
 y = func_y(x)
 z = func_z(x)
 
@@ -34,4 +34,8 @@ plt_z.set_title('Z-func')
 plt_z.tick_params(labelcolor='r', labelsize='medium', width=4)
 plt.show()
 
+data = np.column_stack((x, y))
+np.savetxt('Task_1.1.txt', data, delimiter='\t', header='X\tY')
 
+data = np.column_stack((x, z))
+np.savetxt('Task_1.2.txt', data, delimiter='\t', header='X\tZ')

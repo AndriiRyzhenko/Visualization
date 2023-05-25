@@ -16,3 +16,10 @@ ax.legend(loc='right')
 plt.title('astroid')
 plt.show()
 
+theta2 = np.degrees(theta)
+
+# об'єднати x, y, u в один масив
+combined = np.array([theta2.flatten(), x.flatten(), y.flatten()])
+
+# зберегти combined в txt формат
+np.savetxt('Task_3.txt', combined.T)
